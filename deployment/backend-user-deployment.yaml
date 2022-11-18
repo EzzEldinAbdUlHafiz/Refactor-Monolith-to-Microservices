@@ -2,23 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: udagram-api-user
-  name: udagram-api-user
+    app: backend-user
+  name: backend-user
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: udagram-api-user
+      app: backend-user
   template:
     metadata:
       labels:
-        app: udagram-api-user
+        app: backend-user
     spec:
       containers:
       - image: ezzeldinabdulhafiz/udagram-api-user:latest
-        name: udagram-api-user
+        name: backend-user
         resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
         envFrom:
         - configMapRef:
             name: env-config

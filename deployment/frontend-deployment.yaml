@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name:  frontend
-        image: ezzeldinabdulhafiz/udagram-frontend:v5
+        image: ezzeldinabdulhafiz/udagram-frontend:v6
         imagePullPolicy: Always  
         ports: 
         - containerPort: 80
